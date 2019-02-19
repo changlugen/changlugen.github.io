@@ -90,8 +90,8 @@ def parse_page_detail(html):
     # soup = BeautifulSoup(html, 'lxml')
     # title = soup.select('title')
     # title = soup.select('title')[0].get_text()  # select返回的是列表，取值下标第一个，再提取文字
-    title_pattern = re.compile(r'class="article-title">(.*?)</h1 >', re.S)
-    title = re.findall(title_pattern, html)
+    title_pattern = re.compile(r'class="article-title">(.*?)</h1', re.S)
+    title = re.findall(title_pattern, html)[0]
     etree_html = etree.HTML(html)
     images = etree_html.xpath('//div[@class="pgc-img"]/img/@src')
     # print(title)
