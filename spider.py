@@ -131,9 +131,8 @@ def save_image(content):
             f.close()
 
 
-def main():
+def main(offset):
     # 第一步，拿到索引页源码
-    offset = 0
     html = get_page_index(KEYWORD, offset)
     # print(html)  #返回请求链接的源码，为json串
     # print(type(html))  #json串为字符串str类型
@@ -145,7 +144,7 @@ def main():
         print('正在解析详情页', url)
         # 第三步，已经拿到了图集链接，我们要拿到每个图集链接的网页源码
         html = get_page_detail(url)
-        print('html', html)
+        # print('html', html)
         # 第四步，解析详情页源码，拿出标题和图集下所有图片链接
         result = parse_page_detail(html)
         print(result)
@@ -153,4 +152,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    for x in range(GROUP_START,GROUP_END+1)
+        main(x*20)
